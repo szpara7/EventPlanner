@@ -99,9 +99,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EventPlanner\EventPlanner.csproj">
+    <ProjectReference Include="..\EventPlanner\EventPlanner.MVC.csproj">
       <Project>{F4598F9E-70DF-4342-AFCF-E33EC3623935}</Project>
-      <Name>EventPlanner</Name>
+      <Name>EventPlanner.MVC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
