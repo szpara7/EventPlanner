@@ -10,7 +10,7 @@ namespace EventPlanner.Common.Models
 {
     public class Post
     {
-        public string PostID { get; set; }
+        public int PostID { get; set; }
         public string Content { get; set; }
         public DateTime DateAdded { get; set; }
         [DefaultValue(false)]

@@ -9,7 +9,7 @@ namespace EventPlanner.Common.Models
 {
     public class EventUserGroup
     {
-        public string EventUserGroupID { get; set; }
+        public int EventUserGroupID { get; set; }
 
         [ForeignKey("User")]
         public string UserID { get; set; }

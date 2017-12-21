@@ -10,7 +10,7 @@ namespace EventPlanner.Common.Models
 {
     public class DatePreference
     {
-        public string DatePreferenceID { get; set; }
+        public int DatePreferenceID { get; set; }
         [Required]
         public DateTime MinDate{ get;set;}
         [Required]
