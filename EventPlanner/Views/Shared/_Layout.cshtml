@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -25,11 +26,16 @@
 
         <!-- Navbar links -->
         <div class="collapse navbar-collapse offset-5" id="collapsibleNavbar">
-            @Html.Partial("_LoginPartial")
+            <!-- Item in navbar when user's authenticated -->
+            @if (Request.IsAuthenticated) 
+            {
+                @Html.Partial("_LoginPartial")
+            }
+
         </div>
     </nav>
 
-    <div class="container body-content">
+    <div class="body-content">
         @RenderBody()
         <hr />
         <footer>

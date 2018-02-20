@@ -2,21 +2,20 @@
 @model LoginViewModel
 @{
     ViewBag.Title = "Log in";
-    Layout = null;
 }
 <link href="~/Content/Site.css" rel="stylesheet" />
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 <script src="~/Scripts/jquery.validate.js"></script>
 <div class="row login-content">
 
-    <div class="offset-1 col-md-6 jumbotron bg-light">
+    <div class="col-md-7 jumbotron bg-light">
         Event Planner
         tutaj jakis opis
     </div>
 
     <wbr />
 
-    <div class="offset-1 col-md-3 jumbotron bg-light">
+    <div class="offset-1 col-md-4 jumbotron bg-light">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
@@ -42,7 +41,7 @@
                     <div class="col-md-offset-2 col-md-10">
                         <div class="checkbox">
                             @Html.CheckBoxFor(m => m.RememberMe)
-                            <label class="col-form-label">Zapamiętaj mnie?</label>
+                            @Html.LabelFor(m => m.RememberMe)
                         </div>
                     </div>
                 </div>

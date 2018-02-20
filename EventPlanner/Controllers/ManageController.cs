@@ -217,7 +217,7 @@ namespace EventPlanner.Controllers
         // GET: /Manage/ChangePassword
         public ActionResult ChangePassword()
         {
-            return View();
+            return PartialView();
         }
 
         //
@@ -228,7 +228,7 @@ namespace EventPlanner.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return PartialView(model);
             }
             var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
             if (result.Succeeded)
@@ -238,10 +238,17 @@ namespace EventPlanner.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
+
+                ViewBag.StatusMessage = "Hasło zostało zmienione";
+                if (Request.IsAjaxRequest())
+                {
+                    return PartialView("ChangePassword");
+                }
+
                 return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
             }
             AddErrors(result);
-            return View(model);
+            return PartialView();
         }
 
         //

@@ -12,7 +12,7 @@ namespace EventPlanner.Models
 {
     public static class IdentityModel
     {
-        public static async Task<ClaimsIdentity> GenerateUserIdentityAsync(IdentityUser user,UserManager<IdentityUser> manager)
+        public static async Task<ClaimsIdentity> GenerateUserIdentityAsync(User user,UserManager<User> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
