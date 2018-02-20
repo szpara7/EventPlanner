@@ -1,0 +1,37 @@
+﻿@model EventPlanner.Models.UserInforamtionViewModel
+
+
+<h2>Dane użytkownika.</h2>
+
+
+<form>
+
+    <div class="form-group row">
+        <label class="font-weight-bold col-md-3">Imię:</label>
+        <div class="col-md-3">
+            <p class="form-control-static">@Model.FirstName</p>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="font-weight-bold col-md-3">Nazwisko:</label>
+        <div class="col-md-3">
+            <p class="form-control-static">@Model.LastName</p>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="font-weight-bold col-md-3">Email:</label>
+        <div class="col-md-3">
+            <p class="form-control-static">@Model.EMail</p>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="font-weight-bold col-md-3">Data urodzenia</label>
+        <div class="col-md-3">
+            <p class="form-control-static">@Model.DateOfBirth</p>
+        </div>
+    </div>
+
+</form>

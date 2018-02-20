@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
@@ -18,6 +19,17 @@ namespace EventPlanner.Models
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }
         public IList<AuthenticationDescription> OtherLogins { get; set; }
+    }
+
+    public class UserInforamtionViewModel
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string DateOfBirth { get; set; }
+        public string EMail { get; set; }
+        public bool EmailConfirmed { get; set; }
+        public string PhoneNumber { get; set; }
+        public bool PhoneNumberConfirmed { get; set; }
     }
 
     public class FactorViewModel

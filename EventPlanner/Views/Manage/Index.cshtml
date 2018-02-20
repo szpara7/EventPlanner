@@ -5,21 +5,28 @@
 
 
 <p class="text-success">@ViewBag.StatusMessage</p>
-<div class="row">
+<div class="row maxheight" >
 
-    <div class="col-md-2 rounded bg-dark">
+    <div class="col-md-2 rounded bg-dark p-2">
 
-       @Ajax.ActionLink("Zmień hasło", "ChangePassword", null, new AjaxOptions
-  {
-      HttpMethod = "Get",
-      UpdateTargetId = "manageContent"
-  },
-  new { @class = "btn btn-outline-info btn-block"})
+        @Ajax.ActionLink("Pokaż informacje", "GetUserInformation", null, new AjaxOptions
+        {
+            HttpMethod = "Get",
+            UpdateTargetId = "manageContent"
+        },
+             new { @class = "btn btn-outline-info btn-block selected" })
+
+        @Ajax.ActionLink("Zmień hasło", "ChangePassword", null, new AjaxOptions
+        {
+            HttpMethod = "Get",
+            UpdateTargetId = "manageContent"
+        },
+             new { @class = "btn btn-outline-info btn-block" })
 
     </div>
 
     <div class="offset-1 col-md-7" id="manageContent">
-        @Html.Action("ChangePassword")
+        @Html.Action("GetUserInformation")
     </div>
 
 </div>

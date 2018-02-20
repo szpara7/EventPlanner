@@ -75,6 +75,30 @@ namespace EventPlanner.Controllers
             return View(model);
         }
 
+        //GET
+        public async Task<ActionResult> GetUserInformation()
+        {
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            if(user == null)
+            {
+                await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+            }
+
+            var model = new UserInforamtionViewModel
+            {
+                DateOfBirth = user.DateOfBirth.ToShortDateString(),
+                EMail = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                EmailConfirmed = user.EmailConfirmed,
+                PhoneNumber = user.PhoneNumber,
+                PhoneNumberConfirmed = user.PhoneNumberConfirmed
+            };
+            
+            return PartialView(model);
+        }
+
+
         //
         // POST: /Manage/RemoveLogin
         [HttpPost]

@@ -18,8 +18,13 @@ textarea {
     max-width: 280px;
 }
 
+html {
+    height : 100%;
+}
+
 body {
-    background-image : url('../Images/background.png');
+    background-image: url('../Images/background.png');
+    height: 100%;
 }
 
 .login-content {
@@ -33,4 +38,8 @@ body {
     padding: 1rem;
     background-color: #efefef;
     text-align: center;
+}
+
+.maxheight {
+    height : 100%;
 }
