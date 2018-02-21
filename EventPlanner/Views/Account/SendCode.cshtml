@@ -1,23 +1,26 @@
 ﻿@model EventPlanner.Models.SendCodeViewModel
 @{
-    ViewBag.Title = "Send";
+    ViewBag.Title = "Kod";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="maxheight">
+    <h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
-    @Html.AntiForgeryToken()
-    @Html.Hidden("rememberMe", @Model.RememberMe)
-    <h4>Wyślij kod weryfikacyjny</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-8">
-            Wybierz sposób autentykacji
-            @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
-            <input type="submit" value="Submit" class="btn btn-default" />
+    @using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("rememberMe", @Model.RememberMe)
+        <h4>Wyślij kod weryfikacyjny</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-8">
+                Wybierz sposób autentykacji
+                @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
         </div>
-    </div>
-}
+    }
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

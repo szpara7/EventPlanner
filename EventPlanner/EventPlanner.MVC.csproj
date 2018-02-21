@@ -374,6 +374,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\GetUserInformation.cshtml" />
+    <Content Include="Views\Account\EmailConfirmationInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

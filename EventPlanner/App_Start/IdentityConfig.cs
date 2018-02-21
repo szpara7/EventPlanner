@@ -83,6 +83,7 @@ namespace EventPlanner
                 RequireLowercase = false,
                 RequireUppercase = false,
             };
+            
 
             // Configure user lockout defaults
             manager.UserLockoutEnabledByDefault = true;
@@ -105,8 +106,11 @@ namespace EventPlanner
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider = 
-                    new DataProtectorTokenProvider<User>(dataProtectionProvider.Create("ASP.NET Identity"));
+                manager.UserTokenProvider =
+                    new DataProtectorTokenProvider<User>(dataProtectionProvider.Create("ASP.NET Identity"))
+                    {
+                        TokenLifespan = TimeSpan.FromHours(3)
+                    };
             }
             return manager;
         }
